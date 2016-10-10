@@ -652,7 +652,7 @@ Install this plugin by using Sublime Text [Package Control](http://wbond.net/sub
 2. Select **"Package Control: Install Package"**
 3. Select **ESLint**
 4. Download `.eslintrc` from this repository and use it as your config\_file as described below.
-5.  
+
 #### Configuring ESLint
 
 [ESLint](http://eslint.org/) allows you to specify the JavaScript language options you want to support by using `.eslintrc` file,
