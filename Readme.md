@@ -638,7 +638,7 @@ package manager.
 Before using this plugin, you must ensure that `eslint` is installed on your system.
 To install `eslint`, do the following:
 
-1. Install [Node.js][Node.js] (and [npm][npm] on Linux).
+1. Install [Node.js](https://nodejs.org/) (and [npm](https://nodejs.org/en/download/package-manager/) on Linux).
 
 2. Install `eslint` globally by typing the following in a terminal:
    ```bash
@@ -646,19 +646,20 @@ To install `eslint`, do the following:
    ```
 #### Install plugin
 
-Install this plugin by using Sublime Text [Package Control][Package Control].
+Install this plugin by using Sublime Text [Package Control](http://wbond.net/sublime_packages/package_control/installation).
 
 1. Open **"Command Pallet"** <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> (<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> on OSX)
 2. Select **"Package Control: Install Package"**
 3. Select **ESLint**
-4. Download `.eslintrc` from this repository and use it as your config\_file as described below. 
+4. Download `.eslintrc` from this repository and use it as your config\_file as described below.
+5.  
 #### Configuring ESLint
 
-[ESLint][ESLint Official] allows you to specify the JavaScript language options you want to support by using `.eslintrc` file,
+[ESLint](http://eslint.org/) allows you to specify the JavaScript language options you want to support by using `.eslintrc` file,
 it will use the first `.eslintrc` file found traversing from the active file in Sublime Text up to your project's root.
 
 You can configure ESLint options by specify `.eslintrc` file.
-For more information, see the [ESLint docs][ESLint Official Configuration Docs].
+For more information, see the [ESLint docs](http://eslint.org/docs/user-guide/configuring#configuration-file-formats).
 
 #### Settings
 
