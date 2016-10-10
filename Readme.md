@@ -62,6 +62,7 @@ according to your preferences.
 
 ### ESLint Setup
 * [Sublime Setup](#sublime-setup)
+* [Atom Setup](#atom-setup)
 
 ## Formatting
 
@@ -652,7 +653,7 @@ Install this plugin by using Sublime Text [Package Control](http://wbond.net/sub
 2. Select **"Package Control: Install Package"**
 3. Select **ESLint**
 4. Download `.eslintrc` from this repository and use it as your config\_file as described below.
-5.  
+  
 #### Configuring ESLint
 
 [ESLint](http://eslint.org/) allows you to specify the JavaScript language options you want to support by using `.eslintrc` file,
@@ -707,3 +708,22 @@ The <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>e</kbd> (<kbd>Cmd</kbd> + <kbd>Optio
 then Builds to run ESLint on the file and output any errors for jumping to within the file.
 You could alternatively set the Build System to Automatic and <kbd>Ctrl</kbd> + <kbd>b</kbd> (<kbd>Cmd</kbd> + <kbd>b</kbd> on OSX) or <kbd>F7</kbd>,
 but only on files that end with `.js`.
+
+### Atom Setup
+
+Atom has a package called `linter-eslint` that can be installed via the pacakge manager.
+
+#### Install plugin
+
+Install using the Atom package manager
+
+1. Open **"File/Settings/Install"**.
+2. Search for `linter-eslint` and install the package.
+
+#### Configure plugin
+After install the settings page for the package will be displayed.
+
+1. Under `.eslintrc Path` enter the path to your `.eslintrc` file.
+2. Restart Atom just to be safe.
+
+Atom should then automatically show eslint errors and warnings as you edit.  
