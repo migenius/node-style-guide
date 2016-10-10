@@ -1,12 +1,14 @@
 # Node.js Style Guide
 
-This is a guide for writing consistent and aesthetically pleasing node.js code.
-It is inspired by what is popular within the community, and flavored with some
-personal opinions.
+This is the migenius JavaScript style guide forked from 
+[felixge/node-style-guide](https://github.com/felixge/node-style-guide).
+Following this guide is mandatory for all JavaScript code generated within
+migenius. It is possible that in the future the style guide will be enforced
+either by svn pre-commit hooks or continuous integration builds. 
 
-There is a .jshintrc which enforces these rules as closely as possible. You can
-either use that and adjust it, or use
-[this script](https://gist.github.com/kentcdodds/11293570) to make your own.
+The .eslintrc file matched the style guide and can be used to test and fix
+your code. Most modern editors will have add-ons to support eslint natively.
+Note that .jshintrc and .editorconfig are not valid.
 
 This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
 licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
@@ -18,17 +20,18 @@ according to your preferences.
 ## Table of contents
 
 ### Formatting
-* [2 Spaces for indentation](#2-spaces-for-indentation)
+* [4 Spaces for indentation](#4-spaces-for-indentation)
 * [Newlines](#newlines)
 * [No trailing whitespace](#no-trailing-whitespace)
 * [Use Semicolons](#use-semicolons)
-* [80 characters per line](#80-characters-per-line)
+* [120 characters per line](#120-characters-per-line)
 * [Use single quotes](#use-single-quotes)
 * [Opening braces go on the same line](#opening-braces-go-on-the-same-line)
+* [Use braces on multi line blocks](#use-braces-on-multi-line-blocks)
 * [Declare one variable per var statement](#declare-one-variable-per-var-statement)
 
 ### Naming Conventions
-* [Use lowerCamelCase for variables, properties and function names](#use-lowercamelcase-for-variables-properties-and-function-names)
+* [Use lower_snake_case for variables, properties and function names](#use-lower_snake_case-for-variables-properties-and-function-names)
 * [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
 
@@ -60,9 +63,9 @@ according to your preferences.
 
 You may want to use [editorconfig.org](http://editorconfig.org/) to enforce the formatting settings in your editor. Use the [Node.js Style Guide .editorconfig file](.editorconfig) to have indentation, newslines and whitespace behavior automatically set to the rules set up below.
 
-### 2 Spaces for indentation
+### 4 Spaces for indentation
 
-Use 2 spaces for indenting your code and swear an oath to never mix tabs and
+Use 4 spaces for indenting your code and swear an oath to never mix tabs and
 spaces - a special kind of hell is awaiting you otherwise.
 
 ### Newlines
@@ -86,9 +89,9 @@ cheap syntactic pleasures.
 [the opposition]: http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding
 [hnsemicolons]: http://news.ycombinator.com/item?id=1547647
 
-### 80 characters per line
+### 120 characters per line
 
-Limit your lines to 80 characters. Yes, screens have gotten much bigger over the
+Limit your lines to 120 characters. Yes, screens have gotten much bigger over the
 last few years, but your brain has not. Use the additional room for split screen,
 your editor supports that, right?
 
@@ -131,6 +134,31 @@ if (true)
 
 Also, notice the use of whitespace before and after the condition statement.
 
+### Use braces on multi line blocks
+
+Multi line control statements must always use braces. When the statement is on a single line braces may be ommitted.
+
+*Right:*
+
+```js
+if (err) callback(err);
+
+if (err) {
+    callback(err);
+}
+if (err) {
+    console.error(err);
+    callback(err);
+}
+```
+
+*Wrong:*
+
+```js
+if (err) 
+  callback(err);
+```
+
 ### Declare one variable per var statement
 
 Declare one variable per var statement, it makes it easier to re-order the
@@ -167,41 +195,48 @@ while (keys.length) {
 
 [crockfordconvention]: http://javascript.crockford.com/code.html
 
+The exemption to this is when requiring modules when the following is allowable: 
+
+```js
+var ssh = require('ssh2'),
+    https = require('https');
+```
+
 ### Naming Conventions
 
-### Use lowerCamelCase for variables, properties and function names
+### Use lower\_snake\_case for variables, properties and function names
 
-Variables, properties and function names should use `lowerCamelCase`.  They
+Variables, properties and function names should use `lower_snake_case`.  They
 should also be descriptive. Single character variables and uncommon
 abbreviations should generally be avoided.
 
 *Right:*
 
 ```js
-var adminUser = db.query('SELECT * FROM users ...');
+var admin_user = db.query('SELECT * FROM users ...');
 ```
 
 *Wrong:*
 
 ```js
-var admin_user = db.query('SELECT * FROM users ...');
+var adminUser = db.query('SELECT * FROM users ...');
 ```
 
-### Use UpperCamelCase for class names
+### Use Upper\_snake\_case for class names
 
-Class names should be capitalized using `UpperCamelCase`.
+Class names should be capitalized using `Upper_snake_case`.
 
 *Right:*
 
 ```js
-function BankAccount() {
+function Bank_account() {
 }
 ```
 
 *Wrong:*
 
 ```js
-function bank_Account() {
+function BankAccount() {
 }
 ```
 
