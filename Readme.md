@@ -8,7 +8,6 @@ either by svn pre-commit hooks or continuous integration builds.
 
 The .eslintrc file matched the style guide and can be used to test and fix
 your code. Most modern editors will have add-ons to support eslint natively.
-Note that .jshintrc and .editorconfig are not valid.
 
 This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
 licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
