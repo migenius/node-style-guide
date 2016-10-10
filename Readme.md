@@ -40,7 +40,7 @@ according to your preferences.
 
 ### Conditionals
 * [Use the === operator](#use-the--operator)
-* [Use multi-line ternary operator](#use-multi-line-ternary-operator)
+* [Prefer single-line ternary operator](#prefer-multi-line-ternary-operator)
 * [Use descriptive conditions](#use-descriptive-conditions)
 
 ### Functions
@@ -323,11 +323,17 @@ if (a == '') {
 
 [comparisonoperators]: https://developer.mozilla.org/en/JavaScript/Reference/Operators/Comparison_Operators
 
-### Use multi-line ternary operator
+### Prefer single-line ternary operator
 
-The ternary operator should not be used on a single line. Split it up into multiple lines instead.
+In general we prefer the ternary operator to be used on a single line when it only has simple operands.
 
 *Right:*
+
+```js
+var foo = (a === b) ? 1 : 2;
+```
+
+*Wrong:*
 
 ```js
 var foo = (a === b)
@@ -335,11 +341,24 @@ var foo = (a === b)
   : 2;
 ```
 
+For complex operands the opposite applies. A complex operand is defined as any operand which contains an
+operation
+
+*Right:*
+
+
+```js
+var foo = (a === b)
+  ? (a + 3)
+  : 2;
+```
+
 *Wrong:*
 
 ```js
-var foo = (a === b) ? 1 : 2;
+var foo = (a === b) ? (a + 3) : 2;
 ```
+
 
 ### Use descriptive conditions
 
