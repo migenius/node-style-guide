@@ -6,8 +6,10 @@ Following this guide is mandatory for all JavaScript code generated within
 migenius. It is possible that in the future the style guide will be enforced
 either by svn pre-commit hooks or continuous integration builds. 
 
-The .eslintrc file matched the style guide and can be used to test and fix
+The `.eslintrc` file matched the style guide and can be used to test and fix
 your code. Most modern editors will have add-ons to support eslint natively.
+The current file is aimed more torwards node.js, configurations targetting other
+engines will be created as needed. Instructions for installation can be found below.
 
 This guide was created by [Felix Geisendörfer](http://felixge.de/) and is
 licensed under the [CC BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
@@ -57,6 +59,9 @@ according to your preferences.
 * [Requires At Top](#requires-at-top)
 * [Getters and setters](#getters-and-setters)
 * [Do not extend built-in prototypes](#do-not-extend-built-in-prototypes)
+
+### ESLint Setup
+* [Sublime Setup](#sublime-setup)
 
 ## Formatting
 
@@ -620,3 +625,84 @@ if (a.empty()) {
   console.log('losing');
 }
 ```
+
+## ESLint Setup
+
+### Sublime Setup
+
+Sublime text editor has a package called 'ESlint' that can be installed via the 
+package manager.
+
+#### Install Node.js and eslint
+
+Before using this plugin, you must ensure that `eslint` is installed on your system.
+To install `eslint`, do the following:
+
+1. Install [Node.js][Node.js] (and [npm][npm] on Linux).
+
+2. Install `eslint` globally by typing the following in a terminal:
+   ```bash
+   npm install -g eslint
+   ```
+#### Install plugin
+
+Install this plugin by using Sublime Text [Package Control][Package Control].
+
+1. Open **"Command Pallet"** <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> (<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>p</kbd> on OSX)
+2. Select **"Package Control: Install Package"**
+3. Select **ESLint**
+4. Download `.eslintrc` from this repository and use it as your config\_file as described below. 
+#### Configuring ESLint
+
+[ESLint][ESLint Official] allows you to specify the JavaScript language options you want to support by using `.eslintrc` file,
+it will use the first `.eslintrc` file found traversing from the active file in Sublime Text up to your project's root.
+
+You can configure ESLint options by specify `.eslintrc` file.
+For more information, see the [ESLint docs][ESLint Official Configuration Docs].
+
+#### Settings
+
+Several settings are available to customize the plugin's behavior.
+Those settings are stored in a configuration file, as JSON.
+
+Go to "`Preferences` / `Package Settings` / `ESLint` / `Settings - User`" to add your custom settings.
+
+##### node\_path
+
+*Default: `""`*
+
+The directory location of your `node` executable lives.
+If this is not specified, then it is expected to be on Sublime's environment path.
+
+##### node\_modules_path
+
+*Default: `""`*
+
+The directory location of global `node_modules` via `npm`.
+If this is not specified, then it is expected to be on system environment variable `NODE_PATH`.
+
+##### config\_file
+
+*Default: `""`*
+
+This option allows you to specify an additional configuration file for ESLint.
+If not specified, follows the default config file hierarchy.
+This option works same as ESLint `-c` or `--config` command line option.
+
+#### Run ESLint
+
+ESLint an active JavaScript file.
+
+
+* Open the context menu (right-click), and Select **ESLint**,  
+  Or Open "Command Pallet" and Select **ESLint**,  
+  Or keyboard shortcut: <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>e</kbd> (<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>e</kbd> on OSX)
+
+* <kbd>F4</kbd> : Jump to next error row/column
+* <kbd>Shift</kbd> + <kbd>F4</kbd> : Jump to previous error row-column
+
+**Note:**
+The <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>e</kbd> (<kbd>Cmd</kbd> + <kbd>Option</kbd> + <kbd>e</kbd> on OSX) shortcut changes the Build System on the current file to ESLint,
+then Builds to run ESLint on the file and output any errors for jumping to within the file.
+You could alternatively set the Build System to Automatic and <kbd>Ctrl</kbd> + <kbd>b</kbd> (<kbd>Cmd</kbd> + <kbd>b</kbd> on OSX) or <kbd>F7</kbd>,
+but only on files that end with `.js`.
