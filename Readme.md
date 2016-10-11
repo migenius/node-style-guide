@@ -627,14 +627,12 @@ if (a.empty()) {
 }
 ```
 
-## ESLint Setup
-
-### Sublime Setup
+## Sublime Setup
 
 Sublime text editor has a package called 'ESlint' that can be installed via the 
 package manager.
 
-#### Install Node.js and eslint
+### Install Node.js and eslint
 
 Before using this plugin, you must ensure that `eslint` is installed on your system.
 To install `eslint`, do the following:
@@ -645,7 +643,7 @@ To install `eslint`, do the following:
    ```bash
    npm install -g eslint
    ```
-#### Install plugin
+### Install plugin
 
 Install this plugin by using Sublime Text [Package Control](http://wbond.net/sublime_packages/package_control/installation).
 
@@ -654,7 +652,7 @@ Install this plugin by using Sublime Text [Package Control](http://wbond.net/sub
 3. Select **ESLint**
 4. Download `.eslintrc` from this repository and use it as your config\_file as described below.
   
-#### Configuring ESLint
+### Configuring ESLint
 
 [ESLint](http://eslint.org/) allows you to specify the JavaScript language options you want to support by using `.eslintrc` file,
 it will use the first `.eslintrc` file found traversing from the active file in Sublime Text up to your project's root.
@@ -662,28 +660,28 @@ it will use the first `.eslintrc` file found traversing from the active file in 
 You can configure ESLint options by specify `.eslintrc` file.
 For more information, see the [ESLint docs](http://eslint.org/docs/user-guide/configuring#configuration-file-formats).
 
-#### Settings
+### Settings
 
 Several settings are available to customize the plugin's behavior.
 Those settings are stored in a configuration file, as JSON.
 
 Go to "`Preferences` / `Package Settings` / `ESLint` / `Settings - User`" to add your custom settings.
 
-##### node\_path
+#### node\_path
 
 *Default: `""`*
 
 The directory location of your `node` executable lives.
 If this is not specified, then it is expected to be on Sublime's environment path.
 
-##### node\_modules_path
+#### node\_modules_path
 
 *Default: `""`*
 
 The directory location of global `node_modules` via `npm`.
 If this is not specified, then it is expected to be on system environment variable `NODE_PATH`.
 
-##### config\_file
+#### config\_file
 
 *Default: `""`*
 
@@ -691,7 +689,7 @@ This option allows you to specify an additional configuration file for ESLint.
 If not specified, follows the default config file hierarchy.
 This option works same as ESLint `-c` or `--config` command line option.
 
-#### Run ESLint
+### Run ESLint
 
 ESLint an active JavaScript file.
 
@@ -709,18 +707,18 @@ then Builds to run ESLint on the file and output any errors for jumping to withi
 You could alternatively set the Build System to Automatic and <kbd>Ctrl</kbd> + <kbd>b</kbd> (<kbd>Cmd</kbd> + <kbd>b</kbd> on OSX) or <kbd>F7</kbd>,
 but only on files that end with `.js`.
 
-### Atom Setup
+## Atom Setup
 
 Atom has a package called `linter-eslint` that can be installed via the package manager.
 
-#### Install plugin
+### Install plugin
 
 Install using the Atom package manager
 
 1. Open **"File/Settings/Install"**.
 2. Search for `linter-eslint` and install the package.
 
-#### Configure plugin
+### Configure plugin
 After install the settings page for the package will be displayed.
 
 1. Under `.eslintrc Path` enter the path to your `.eslintrc` file.
