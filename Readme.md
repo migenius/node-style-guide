@@ -33,7 +33,7 @@ according to your preferences.
 
 ### Naming Conventions
 * [Use lower_snake_case for variables, properties and function names](#use-lower_snake_case-for-variables-properties-and-function-names)
-* [Use UpperCamelCase for class names](#use-uppercamelcase-for-class-names)
+* [Use Upper_snake_case for class names](#use-upper_snake_case-for-class-names)
 * [Use UPPERCASE for Constants](#use-uppercase-for-constants)
 
 ### Variables
